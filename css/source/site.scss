@@ -89,7 +89,8 @@ body {
     line-height: 197px;
     text-align: center;
     color: #001224;
-    text-shadow: 0px 0px 2px #0076ec;
+    -webkit-text-stroke-width: 1px;
+    -webkit-text-stroke-color: rgb(15,38,61);
 }
 
 .about-collection {
@@ -108,10 +109,19 @@ body {
 .digital-boys {
     &-mini {
         display: none;
+        .icon {
+            vertical-align: -11px !important;
+        }
+    }
+    &-medium {
+        .icon {
+            vertical-align: -11px !important;
+        }
     }
     @media (max-width: 500px) {
         &-medium {
             display: none;
+            
         }
         &-mini {
             display: inline-block;
@@ -141,6 +151,7 @@ body {
 }
 
 .col-sm-4 {
+    width: 669px;
     @media (max-width: 847px) {
         width: 500px !important;
     }
@@ -178,6 +189,11 @@ body {
 }
 
 .footer {
+    &-medium {
+        .icon {
+            vertical-align: -11px !important;
+        }
+    }
     @media (max-width: 993px) {
         height: 184px !important;
         > div {
@@ -198,6 +214,9 @@ body {
         display: none !important;
         @media (max-width: 993px) {
             display: block !important;
+        }
+        .icon {
+            vertical-align: -11px !important;
         }
     }
 }
@@ -254,7 +273,22 @@ body {
     top: -33%;
 }
 
+.icon {
+    vertical-align: -9px !important;
+}
+
+.btn {
+    border: none !important;
+    > span {
+        margin-right: 4px;
+    }
+}
+
 .wave {
+    @media (max-width: 453px) {
+        width: 577px;
+        left: -112px;
+    }
     position: absolute;
     width: 100%;
     z-index: -1;
