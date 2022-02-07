@@ -1,159 +1,419 @@
 <!doctype html>
-<html lang="en">
-  <head>
-    <!-- Required meta tags -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+<html lang="ru">
 
-    <!-- Bootstrap CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
-    <link rel="stylesheet" href="css/style.css">
-    <title>Hello, world!</title>
-  </head>
-  <body>
-    <div class="header">
-            
-        <button class="header-burger">
-            <div class="hamburger-menu header-cart">
-                    <input id="menu__toggle" type="checkbox" />
-                    <label class="menu__btn" for="menu__toggle">
-                        <span></span>
-                    </label>  
-                    <ul class="menu__box">
-                        <a href="https://www.apple.com/ru/search"><div class="find">
-                                <img src="img/image_small_fink.svg" alt="">
-                                <div>
-                                    Поиск на apple.com
-                                </div>
-                            </div>
-                        </a>
-                        <hr class="burger">
-                        <div class="burgercontainer">
-                                <li><a class="menu__item" href="https://www.apple.com/ru/mac/">Mac</a></li>
-                                <hr class="burger">
-                                <li><a class="menu__item" href="https://www.apple.com/ru/ipad/">iPad</a></li>
-                                <hr class="burger">
-                                <li><a class="menu__item" href="https://www.apple.com/ru/iphone/">iPhone</a></li>
-                                <hr class="burger">
-                                <li><a class="menu__item" href="https://www.apple.com/ru/watch/">Watch</a></li>
-                                <hr class="burger">
-                                <li><a class="menu__item" href="https://www.apple.com/ru/tv/">TV</a></li>
-                                <hr class="burger">
-                                <li><a class="menu__item" href="https://www.apple.com/ru/music/">Music</a></li>
-                                <hr class="burger">
-                                <li><a class="menu__item" href="https://support.apple.com/ru-ru">Поддержка</a></li>
-                        </div>
-                        
-                    </ul>
-                </div>
-        </button>
-        <a href="https://www.apple.com/ru/"><img class="header-logo" src="img/image_small.svg" alt="apple logo"></a>
-        <button class="header-cart">
-            <a href="https://www.apple.com/ru/shop/goto/bag"><img  src="img/shopping_bag_white_24dp.svg" alt="cart"></a>
-        </button>
-    </div>
-    <div class="wrapper" id="stickk">
-        <div class="header-wrapper-text">
-            <h5>Предпросмотр в <br> <a href="https://www.apple.com/ru/app-store/"><strong>App Store</strong></a></h5>
-        </div>
-        <hr class="hr">
-        
-    </div>
-    <div class="header-wrapper-warn" id="padded">
-        <p>
-            Приложение доступно только в App Store для iPhone и iPad.
-        </p> 
-    </div>
-    <div class="container">
-        <div class="main">
-            <img src="img/217x0w.webp" alt="subway surfers">
-            <div class="main-desc">
-                <div class="main-desc-header">
-                    <h5><strong>Subway Surfers</strong><span>9+</span></h5>
-                </div>
-                <div class="main-desc-main">
-                    Бесконечное веселье ждет вас!
-                </div>
-                <div class="main-desc-author">
-                    <a href="https://apps.apple.com/ru/developer/sybo-games-aps/id471259040">Sybo Games ApS</a>
-                </div>
-                <div class="main-desc-rating">
-                    <div class="main-desc-rating-top">
-                        Экшен: № 4 в этой категории
-                    </div>
-                    <div class="main-desc-rating-stars">
-                        <img src="img/stars.PNG" alt="stars"> 4,5  • Оценок: 95,3 тыс.
-                    </div>
-                </div>
-                <div class="main-desc-free">
-                    Бесплатно <br>
-                    • Включает встроенные покупки
-                </div>
-            </div>
-        </div>
-        <hr class="hr">
-        <div class="photos">
-            <h5><strong>Снимки экрана (iPhone)</strong></h5>
-            
-        </div>
-    </div>
-    <div class="images">     
-            <img src="img/screenshots/600x0w_005.webp" alt="img1">
-      
-            <img src="img/screenshots/600x0w.webp" alt="img2">
-      
-            <img src="img/screenshots/460x0w_003.jpg" alt="img3">
-       
-            <img src="img/screenshots/460x0w_004.jpg" alt="img4">
-      
-            <img src="img/screenshots/460x0w_005.jpg" alt="img5">
-    </div>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Some landing page">
+  <meta name="author" content="Dmitry Kang">
+  <meta name="docsearch:language" content="ru">
+  <meta name="docsearch:version" content="5.0">
+  <title>Digital resistance boys</title>
+  <!-- Bootstrap core CSS -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/css/bootstrap.min.css"
+    integrity="sha384-r4NyP46KrjDleawBgD5tp8Y7UzmLA05oM1iAEQ17CSuDqnUK2+k9luXQOfXJCJ4I" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://bootstrap5.ru/css/docs.css">
 
-    <div class="container">
-        <div class="whatsnew">
-                <hr>
-                <h5><strong>Что нового</strong></h5>
-                <p class="ver">Версия 2.17.2</p>
-                <p class="whatsnew-text">- Кругосветное путешествие Subway Surfers возвращается туда, где все началось: в Копенгаген!</p>
-                <p class="whatsnew-text">- Отпразднуй девятый день рождения Subway Surfers вместе с Тримом, новым легендарным серфером-воином.</p>
-                <p class="whatsnew-text">- Промчись по историческим улочкам Копенгагена на новой доске «Викинг».</p>
-                <p class="whatsnew-text">- Пополни команду фантастической Ланой в новом северном наряде.</p>
-                <p class="whatsnew-text">- Собирай жетоны, чтобы открывать веселые призы в сезонной охоте.</p>
-                <p class="whatsnew-text">- Открой бесплатную доску в честь девятого дня рождения и отпразднуй его вместе с Subway Surfers.</p>
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Play:wght@400;700&display=swap" rel="stylesheet">
+
+  <!-- Custom styles for this template -->
+  <link href="css/main.css" rel="stylesheet">
+</head>
+
+<body>
+  <nav class="site-header sticky-top py-5">
+    <div class="container d-flex flex-column flex-md-row justify-content-between">
+      <span class="header-title py-2">Digital Resistance Boys</span>
+      <div class="header-right d-flex flex-column flex-md-row justify-content-between">
+        <a class="py-3 header-navigation" href="#">О НАС</a>
+        <a class="py-3 header-navigation" href="#">ВАРИАЦИИ</a>
+        <a class="py-3 header-navigation" href="#">КОМАНДА</a>
+        <div class="btn-group py-2 d-md-inline-block header-navigation language-select">
+          <button type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
+            <img src="img/language-select/russia.png" alt="">
+            <svg class="language-select-svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+              xmlns="http://www.w3.org/2000/svg">
+              <path
+                d="M12 15L12.3536 15.3536L12 15.7071L11.6464 15.3536L12 15ZM18.3536 9.35355L12.3536 15.3536L11.6464 14.6464L17.6464 8.64645L18.3536 9.35355ZM11.6464 15.3536L5.64645 9.35355L6.35355 8.64645L12.3536 14.6464L11.6464 15.3536Z"
+                fill="white" />
+            </svg>
+          </button>
+          <ul class="dropdown-menu">
+            <li class="bg-blue first"><button class="dropdown-item" type="button">
+                <img src="img/language-select/russia.png" alt="">
+                Русский
+              </button>
+            </li>
+            <li><button class="dropdown-item" type="button">
+                <img src="img/language-select/russia.png" alt="">
+                Русский
+              </button>
+            </li>
+            <li class="bg-blue"><button class="dropdown-item" type="button">
+                <img src="img/language-select/russia.png" alt="">
+                Русский
+              </button>
+            </li>
+            <li><button class="dropdown-item" type="button">
+                <img src="img/language-select/russia.png" alt="">
+                Русский
+              </button>
+            </li>
+          </ul>
         </div>
+
+      </div>
+
+    </div>
+  </nav>
+  <nav class="mini-navbar sticky-top navbar navbar-dark red lighten-1 mb-4">
+    <span class="header-title py-2">DRB NFT</span>
+    <button class="navbar-toggler second-button" type="button" data-toggle="collapse" data-target="#navbarSupportedContent23"
+      aria-controls="navbarSupportedContent23" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon2"><span></span><span></span><span></span><span></span></div>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent23">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item active">
+          <a class="nav-link" href="#">Кто мы?</a>
+        </li>
         <hr>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Вариации</a>
+        </li>
+        <hr>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Команда</a>
+        </li>
+      </ul>
+      <a class="btn btn-outline-secondary digital-boys-nav" href="#"><span class=""><img src="img/icons/telegram.png" alt=""></span>@Digitalresistanceboys</a>
     </div>
+  </nav>
+  <section class="section section-digital-boys">
+    <img class="hero1" src="img/digital-boys/hero1.png" alt="">
+    <img class="hero1" src="img/digital-boys/hero1.png" alt="">
+    <img class="hero3" src="img/digital-boys/hero3.png" alt="">
+    <img class="hero2" src="img/digital-boys/hero2.png" alt="">
+    <img class="hero4" src="img/digital-boys/hero4.png" alt="">
+    <img class="hero5" src="img/digital-boys/hero5.png" alt="">
+    <div class="position-relative overflow-hidden p-3 p-md-5 digital-boys text-center">
+      <div class="p-lg-5 mx-auto my-5">
+        
+        <h1 class="display-4 font-weight-normal">Digital Resistance Boys <strong>NFT</strong></h1>
+        <p class="col-sm-4 mx-auto lead font-weight-normal">A very important part of The Open Network (TON) and the
+          Internet in general. We develop the TON network and spread the idea of a free Internet. Based on the «Digital
+          Resistance» movement from the founder of TON and Telegram Pavel Durov. Subscribe to our Telegram channel to
+          learn about exclusive promotions.</p>
+        <a class="btn btn-outline-secondary digital-boys-medium" href="#"><span class=""><img src="img/icons/telegram.png" alt=""></span>
+          &nbsp; @Digitalresistanceboys</a>
+        <a class="btn btn-outline-secondary digital-boys-mini" href="#"><span class=""><img src="img/icons/telegram.png" alt=""></span>
+          &nbsp; @D.Resistance</a>
+      </div>
+    </div>
+    <img class="wave" src="img/digital-boys/wave.png" alt="">
+  </section>
+
+  <section class="section section-about-collection">
+    <div class="position-relative overflow-hidden p-3 p-md-5 text-center">
+      <div class="p-lg-5 mx-auto my-5">
+        <div class="background-title about-collection">About collection</div>
+        <h1 class="display-4 font-weight-normal">About collection</h1>
+        <p class="col-sm-4 mx-auto lead font-weight-normal">Digital Resistance Boys is 10,000 quality NFTs, each one is
+          unique. Digital Resistance Boys is thousands of followers, we call them Resistance Boys. Digital Resistance
+          Boys is a symbol of freedom on the Internet.</p>
+      </div>
+      <div class="about-collection_collections">
+        <div class="item"></div>
+        <div class="item"></div>
+        <div class="item"></div>
+        <div class="item"></div>
+        <div class="item"></div>
+        <div class="item"></div>
+        <div class="item"></div>
+        <div class="item"></div>
+        <div class="item"></div>
+        <div class="item"></div>
+        <div class="item"></div>
+        <div class="item"></div>
+        <div class="item"></div>
+        <div class="item"></div>
+        <div class="item"></div>
+        <div class="item"></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section-variations">
+    <div class="position-relative overflow-hidden p-3 p-md-5 m-md-3 text-center">
+      <div class="p-lg-5 mx-auto my-5">
+        <div class="background-title variations">NFT variations</div>
+        <h1 class="display-4 font-weight-normal">Variations</h1>
+        <p class="col-sm-4 mx-auto lead font-weight-normal">Each NFT from the Digital Resistance Boys collection can
+          include several characteristics that make it unique.</p>
+      </div>
+      <div class="mx-auto section-variations-items">
+        <div class=" section-variations-inscription">
+          <div>
+            <div>
+              <div class="item"></div>
+              Надпись
+            </div>
+            <div>
+              <div class="item"></div>
+              Надпись
+            </div>
+            <div>
+              <div class="item"></div>
+              Надпись
+            </div>
+            <div>
+              <div class="item"></div>
+              Надпись
+            </div>
+            <div>
+              <div class="item"></div>
+              Надпись
+            </div>
+            <div>
+              <div class="item"></div>
+              Надпись
+            </div>
+            <div>
+              <div class="item"></div>
+              Надпись
+            </div>
+            <div>
+              <div class="item"></div>
+              Надпись
+            </div>
+            <div>
+              <div class="item"></div>
+              Надпись
+            </div>
+          </div>
+        </div>
+        <div class="section-variations-inscription-2 first-variation">
+          <div>
+            <div>
+              <div class="item"></div>
+              Надпись
+            </div>
+            <div>
+              <div class="item"></div>
+              Надпись
+            </div>
+            <div>
+              <div class="item"></div>
+              Надпись
+            </div>
+            <div>
+              <div class="item"></div>
+              Надпись
+            </div>
+            <div>
+              <div class="item"></div>
+              Надпись
+            </div>
+          </div>
+        </div>
+        <div class="section-variations-inscription-2">
+          <div>
+            <div>
+              <div class="item"></div>
+              Надпись
+            </div>
+            <div>
+              <div class="item"></div>
+              Надпись
+            </div>
+            <div>
+              <div class="item"></div>
+              Надпись
+            </div>
+            <div>
+              <div class="item"></div>
+              Надпись
+            </div>
+            <div>
+              <div class="item"></div>
+              Надпись
+            </div>
+          </div>
+        </div>
+        <div class="section-variations-inscription-3">
+          <div>
+            <div>
+              <div class="item"></div>
+              Надпись
+            </div>
+            <div>
+              <div class="item"></div>
+              Надпись
+            </div>
+            <div>
+              <div class="item"></div>
+              Надпись
+            </div>
+            <div>
+              <div class="item"></div>
+              Надпись
+            </div>
+            <div>
+              <div class="item"></div>
+              Надпись
+            </div>
+            <div>
+              <div class="item"></div>
+              Надпись
+            </div>
+          </div>
+        </div>
+        <div class="section-variations-inscription-4">
+          <div>
+            <div>
+              <div class="item"></div>
+              Надпись
+            </div>
+            <div>
+              <div class="item"></div>
+              Надпись
+            </div>
+            <div>
+              <div class="item"></div>
+              Надпись
+            </div>
+          </div>
+        </div>
+        <div class="section-variations-inscription-4 prelast">
+          <div>
+            <div>
+              <div class="item"></div>
+              Надпись
+            </div>
+            <div>
+              <div class="item"></div>
+              Надпись
+            </div>
+            <div>
+              <div class="item"></div>
+              Надпись
+            </div>
+          </div>
+        </div>
+        <div class="section-variations-inscription-3 last">
+          <div>
+            <div>
+              <div class="item"></div>
+              Надпись
+            </div>
+            <div>
+              <div class="item"></div>
+              Надпись
+            </div>
+            <div>
+              <div class="item"></div>
+              Надпись
+            </div>
+            <div>
+              <div class="item"></div>
+              Надпись
+            </div>
+            <div>
+              <div class="item"></div>
+              Надпись
+            </div>
+            <div>
+              <div class="item"></div>
+              Надпись
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
 
 
-    <!-- Optional JavaScript; choose one of the two! -->
+  <section class="section section-team">
+    <div class="position-relative overflow-hidden p-3 p-md-5 m-md-3 text-center">
+      <div class="p-lg-5 mx-auto my-5">
+        <div class="background-title team">Our team</div>
+        <h1 class="display-4 font-weight-normal">Team</h1>
+        <p class="col-sm-4 mx-auto lead font-weight-normal">Our team is a harmonious mechanism consisting of six
+          first-class specialists, each of them is a master of his craft.</p>
+      </div>
+    </div>
+    <div class="d-md-flex mx-auto flex-md-equal w-100 my-md-3 pl-md-3 members-array">
+      <div class="mr-md-3 text-center text-white overflow-hidden members-member">
+        <img src="img/members/Egor.png" alt="">
+        <div class="">
+          <h2 class="members-member_name">Egor</h2>
+          <p class="members-member_descr">CEO, investor, first-class manager.</p>
+        </div>
+      </div>
+      <div class="mr-md-3 text-center text-white overflow-hidden members-member">
+        <img src="img/members/default.png" alt="">
+        <div class="">
+          <h2 class="members-member_name">Sam</h2>
+          <p class="members-member_descr">Investor, phenomenal marketer.</p>
+        </div>
+      </div>
+      <div class="mr-md-3 text-center text-white overflow-hidden members-member">
+        <img src="img/members/default.png" alt="">
+        <div class="">
+          <h2 class="members-member_name">Dmitriy</h2>
+          <p class="members-member_descr">Lead developer, brilliant programmer.</p>
+        </div>
+      </div>
+      <div class="mr-md-3 text-center text-white overflow-hidden members-member">
+        <img src="img/members/default.png" alt="">
+        <div class="">
+          <h2 class="members-member_name">Sergei</h2>
+          <p class="members-member_descr">Developer, great programmer.</p>
+        </div>
+      </div>
+      <div class="mr-md-3 text-center text-white overflow-hidden members-member">
+        <img src="img/members/Anatoly.png" alt="">
+        <div class="">
+          <h2 class="members-member_name">Anatoly</h2>
+          <p class="members-member_descr">Talented artist.</p>
+        </div>
+      </div>
+      <div class="mr-md-3 text-center text-white overflow-hidden members-member">
+        <img src="img/members/default.png" alt="">
+        <div class="">
+          <h2 class="members-member_name">Alexei</h2>
+          <p class="members-member_descr">Investor, expert, mastermind.</p>
+        </div>
+      </div>
+    </div>
+    <img class="ellipses" src="img/digital-boys/Ellipses.png" alt="">
+  </section>
 
-    <!-- Option 1: Bootstrap Bundle with Popper -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous"></script>
 
-    <!-- Option 2: Separate Popper and Bootstrap JS -->
-    <!--
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.min.js" integrity="sha384-Atwg2Pkwv9vp0ygtn1JAojH0nYbwNJLPhwyoVbhoPwBhjQPR5VtM2+xf0Uwh9KtT" crossorigin="anonymous"></script>
-    -->
-    <script>
-            window.onscroll = function() {myFunction()};
-            
-            var header = document.getElementById("stickk");
-            var checkboxed = document.querySelector("input[type='checkbox']")
-            var padded = document.getElementById("padded");
-            var sticky = header.offsetTop;
-            
-            function myFunction() {
-              if (window.pageYOffset >= sticky && !checkboxed.checked) {
-                header.classList.add("sticky");
-                // padded.classList.add("padded");
-                padded.style.padding = "95px 15px 0 15px";
-              } else {
-                header.classList.remove("sticky");
-                padded.style.padding = "15px 15px 0 15px";
-                // padded.classList.remove("padded");
-              }
-            }
-            </script>
-  </body>
+  <footer class="footer">
+    <div class="container d-flex flex-column flex-md-row justify-content-between">
+      <span class="header-title py-2">Digital Resistance Boys</span>
+      <div class="footer-medium">
+        <span>Subscribe us</span>
+        <a class="btn btn-outline-secondary" href="#"><span class=""><img src="img/icons/telegram.png" alt=""></span>
+          &nbsp; @Digitalresistanceboys</a>
+      </div>
+      <div class="footer-mini mx-auto text-center">
+        <div class="header-title py-2">DRB NFT</div>
+        <div><a class="btn btn-outline-secondary" href="#"><span class=""><img src="img/icons/telegram.png" alt=""></span>
+          &nbsp; @D.Resistance</a></div>
+      </div>
+    </div>
+  </footer>
+
+
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/js/bootstrap.bundle.min.js"></script>
+  <script src="https://yastatic.net/jquery/3.3.1/jquery.min.js"></script>
+  <script src="js/main.js"></script>
+</body>
+
 </html>
