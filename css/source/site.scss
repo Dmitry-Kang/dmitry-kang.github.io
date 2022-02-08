@@ -82,17 +82,17 @@ body {
             border-radius: 5px;
         }
         position: absolute;
-        z-index: 10;
+        // z-index: 10;
         right: 33px;
         top: 29px;
         width: 28px;
         height: 39px;
         cursor: pointer;
     }
-    top: 87px;
+    top: 0;
     width: 100%;
-    height: 80%;
-    background: #17395a;
+    height: 100%;
+    background: #0F263D;
     border-radius: 12px;
     color: #ccc;
     position: fixed;
@@ -387,6 +387,12 @@ body {
     width: 100%;
     z-index: -1;
     top: 118%;
+}
+
+.hero7 {
+    position: absolute;
+    width: 100%;
+    height: 100%;
 }
 
 .hero3 {
@@ -1041,7 +1047,7 @@ path {
     }
     > span {
         top: 23px;
-        z-index: 2;
+        // z-index: 2;
         margin-left: 28px;
         position: relative;
     }
