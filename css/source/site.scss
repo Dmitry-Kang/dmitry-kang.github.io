@@ -434,6 +434,11 @@ body {
                 color: #ffffff;
             }
             a {
+                @media (max-width: 500px) {
+                    padding: 10px 12px 10px 12px;
+                    font-size: 18px;
+                    line-height: 21px;
+                }
                 background: linear-gradient(90deg, #5badff 0%, #65b2ff 0.01%, #2a94ff 50.31%, #0076ec 100%);
                 border-radius: 12px;
                 font-family: Play;
@@ -883,6 +888,11 @@ nav {
             letter-spacing: 0.01em;
         }
         a {
+            @media (max-width: 500px) {
+                padding: 10px 12px 10px 12px;
+                font-size: 18px;
+                line-height: 21px;
+            }
             background: linear-gradient(90deg, #5badff 0%, #65b2ff 0.01%, #2a94ff 50.31%, #0076ec 100%);
             border-radius: 12px;
             font-family: Play;
