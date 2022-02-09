@@ -12,6 +12,7 @@ body {
 }
 
 .menu {
+    background: green !important;
     .navbar {
        
         &-header {
@@ -1040,6 +1041,7 @@ path {
 }
 
 .mini-navbar {
+    background: red;
     height: 100px;
     display: none;
     @media (max-width: 772px) {
