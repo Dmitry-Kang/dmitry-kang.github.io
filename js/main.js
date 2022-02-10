@@ -1,4 +1,5 @@
 let elems = document.querySelectorAll('.menu-bar');
+console.log(elems);
 let is_active = false;
 elems.forEach(element => {
     element.addEventListener('click', function(){
