@@ -205,16 +205,21 @@ body {
     margin-left: -734px;
     z-index: -1;
     mix-blend-mode: screen;
+    @media (max-width: 1450px) {
+        width: 100%;
+        margin-left: -50%;
+        // top: -27%;
+    }
     @media (max-width: 900px) {
-        width: 1070px;
-        height: 895px;
-        margin-left: -535px;
+        // width: 1070px;
+        // height: 895px;
+        // margin-left: -535px;
         // top: -27%;
     }
     @media (max-width: 630px) {
-        width: 1070px;
-        height: 762px;
-        margin-left: -450px;
+        // width: 1070px;
+        // height: 762px;
+        // margin-left: -450px;
     }
     @media (max-width: 375px) {
         width: 542px;
