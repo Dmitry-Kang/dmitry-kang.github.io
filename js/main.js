@@ -1,7 +1,7 @@
 let elems = document.querySelectorAll('.menu-bar');
 console.log(elems);
 let is_active = false;
-elems.forEach(element => {
+Array.prototype.forEach.call(elems, function (element) {
     element.addEventListener('click', function(){
         is_active = !is_active;
         console.log("pressed", is_active);
