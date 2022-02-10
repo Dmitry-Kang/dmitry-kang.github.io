@@ -1128,6 +1128,11 @@ path {
 }
 
 .mini-navbar {
+    .btn-group {
+        position: absolute;
+        right: 81px;
+        top: 23px;
+    }
     height: 100px;
     display: none;
     @media (max-width: 772px) {
