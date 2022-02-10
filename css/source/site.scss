@@ -128,6 +128,38 @@ body {
     }
 }
 
+.hero2 {
+    &-absolute {
+        margin: 0 auto;
+        left: 0;
+        right: 0;
+        top: 0%;
+        position: absolute;
+        width: 100%;
+        height: 860px;
+    }
+    &-div {
+        
+        overflow: hidden;
+        width: 100%;
+        height: 860px;
+        position: relative;
+        margin: 0 auto;
+        
+    }
+
+    position: absolute;
+    background-image: url("../img/digital-boys/hero6.png");
+    width: 1633px;
+    height: 1182px;
+    left: 50%; 
+    z-index: -1;
+    margin-left: -817.5px;
+    @media (max-width: 1000px) {
+        display: none;
+    }
+}
+
 .hero1 {
     &-absolute {
         @media (max-width: 375px) {
@@ -157,6 +189,10 @@ body {
         position: relative;
         margin: 0 auto;
         
+    }
+    &.hero1-2 {
+        background: #2994FF;
+        mix-blend-mode: color;
     }
     background-image: url("../img/digital-boys/hero1.png");
     width: 1468px;
@@ -368,17 +404,7 @@ body {
     }
 }
 
-.hero2 {
-    position: absolute;
-    left: 0;
-    right: 0;
-    z-index: -1;
-    margin: 0 auto;
-    top: 5%;
-    @media (max-width: 1650px) {
-        display: none;
-    }
-}
+
 
 .hero4 {
     max-width: 100%;
