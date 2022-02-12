@@ -29,12 +29,12 @@
     <div class="container d-flex flex-column flex-md-row justify-content-between">
       <span class="header-title py-2">Digital Resistance Boys</span>
       <div class="header-right d-flex flex-column flex-md-row justify-content-between">
-        <a class="py-3 header-navigation" href="#about">ABOUT</a>
-        <a class="py-3 header-navigation" href="#variations">VARIATIONS</a>
-        <a class="py-3 header-navigation" href="#team">TEAM</a>
+        <a class="py-3 header-navigation scrollto button1" href="#about">ABOUT</a>
+        <a class="py-3 header-navigation scrollto button2" href="#variations">VARIATIONS</a>
+        <a class="py-3 header-navigation scrollto button3" href="#team">TEAM</a>
         <div class="btn-group py-2 d-md-inline-block header-navigation language-select">
           <button type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
-            <img src="img/icons/russia.svg" alt="">
+            <img src="img/icons/usa.svg" alt="">
             <svg class="language-select-svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
               xmlns="http://www.w3.org/2000/svg">
               <path
@@ -48,21 +48,6 @@
                 Русский
             </a>
             </li>
-            <li><a class="dropdown-item" type="button">
-                <img src="img/icons/russia.svg" alt="">
-                Русский
-              </a>
-            </li>
-            <li class="bg-blue"><a class="dropdown-item" type="button">
-                <img src="img/icons/russia.svg" alt="">
-                Русский
-              </a>
-            </li>
-            <li class="last"><a class="dropdown-item" type="button">
-                <img src="img/icons/russia.svg" alt="">
-                Русский
-              </a>
-            </li>
           </ul>
         </div>
 
@@ -74,7 +59,7 @@
     <span class="header-title py-2">DRB NFT</span>
     <div class="btn-group py-2 d-md-inline-block header-navigation language-select">
       <button type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
-        <img src="img/icons/russia.svg" alt="">
+        <img src="img/icons/usa.svg" alt="">
         <svg class="language-select-svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
           xmlns="http://www.w3.org/2000/svg">
           <path
@@ -85,21 +70,6 @@
       <ul class="dropdown-menu">
         <li class="bg-blue first"><a class="dropdown-item" href="../" type="button" src="/en/index.html">
             <img src="img/icons/russia.svg"  alt="">
-            Русский
-          </a>
-        </li>
-        <li><a class="dropdown-item" type="button">
-            <img src="img/icons/russia.svg" alt="">
-            Русский
-          </a>
-        </li>
-        <li class="bg-blue"><a class="dropdown-item" type="button">
-            <img src="img/icons/russia.svg" alt="">
-            Русский
-          </a>
-        </li>
-        <li class="last"><a class="dropdown-item" type="button">
-            <img src="img/icons/russia.svg" alt="">
             Русский
           </a>
         </li>
@@ -119,15 +89,15 @@
       
       <ul class="navbar-nav mr-auto">
         <li class="nav-item active">
-          <a class="nav-link text-left" href="#about">About</a>
+          <a class="nav-link text-left scrollto button1" href="#about">About</a>
         </li>
         <hr>
         <li class="nav-item">
-          <a class="nav-link text-left" href="#variations">Variations</a>
+          <a class="nav-link text-left scrollto button2" href="#variations">Variations</a>
         </li>
         <hr>
         <li class="nav-item">
-          <a class="nav-link text-left" href="#team">Team</a>
+          <a class="nav-link text-left scrollto button3" href="#team">Team</a>
         </li>
       </ul>
       <a class="btn btn-outline-secondary digital-boys-nav" href="https://t.me/DigitalResistanceBoys"><span class=""><img class="icon" src="img/icons/telegram.svg" alt=""></span>@Digitalresistanceboys</a>
@@ -417,6 +387,17 @@
 
   <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/js/bootstrap.bundle.min.js"></script>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script>
+    jQuery(document).ready(function() {
+      jQuery("a.scrollto").click(function () {
+        elementClick = jQuery(this).attr("href")
+        destination = jQuery(elementClick).offset().top;
+        jQuery("html:not(:animated),body:not(:animated)").animate({scrollTop: destination}, 1100);
+        return false;
+      });
+    });
+    </script>
   <script src="js/main.js"></script>
 </body>
 

@@ -29,9 +29,9 @@
     <div class="container d-flex flex-column flex-md-row justify-content-between">
       <span class="header-title py-2">Digital Resistance Boys</span>
       <div class="header-right d-flex flex-column flex-md-row justify-content-between">
-        <a class="py-3 header-navigation" href="#about">О КОЛЛЕКЦИИ</a>
-        <a class="py-3 header-navigation" href="#variations">ВАРИАЦИИ</a>
-        <a class="py-3 header-navigation" href="#team">КОМАНДА</a>
+        <a class="py-3 header-navigation scrollto button1" href="#about">О КОЛЛЕКЦИИ</a>
+        <a class="py-3 header-navigation scrollto button2" href="#variations">ВАРИАЦИИ</a>
+        <a class="py-3 header-navigation scrollto button3" href="#team">КОМАНДА</a>
         <div class="btn-group py-2 d-md-inline-block header-navigation language-select">
           <button type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
             <img src="img/icons/russia.svg" alt="">
@@ -44,24 +44,9 @@
           </button>
           <ul class="dropdown-menu">
             <li class="bg-blue first"><a class="dropdown-item" type="button" href="en/">
-                <img src="img/icons/russia.svg" alt="">
+                <img src="img/icons/usa.svg" alt="">
                 English
             </a>
-            </li>
-            <li><a class="dropdown-item" type="button">
-                <img src="img/icons/russia.svg" alt="">
-                Русский
-              </a>
-            </li>
-            <li class="bg-blue"><a class="dropdown-item" type="button">
-                <img src="img/icons/russia.svg" alt="">
-                Русский
-              </a>
-            </li>
-            <li class="last"><a class="dropdown-item" type="button">
-                <img src="img/icons/russia.svg" alt="">
-                Русский
-              </a>
             </li>
           </ul>
         </div>
@@ -84,23 +69,8 @@
       </button>
       <ul class="dropdown-menu">
         <li class="bg-blue first"><a class="dropdown-item" href="en/" type="button" src="/en/index.html">
-            <img src="img/icons/russia.svg" alt="">
+            <img src="img/icons/usa.svg" alt="">
             English
-          </a>
-        </li>
-        <li><a class="dropdown-item" type="button">
-            <img src="img/icons/russia.svg" alt="">
-            Русский
-          </a>
-        </li>
-        <li class="bg-blue"><a class="dropdown-item" type="button">
-            <img src="img/icons/russia.svg" alt="">
-            Русский
-          </a>
-        </li>
-        <li class="last"><a class="dropdown-item" type="button">
-            <img src="img/icons/russia.svg" alt="">
-            Русский
           </a>
         </li>
       </ul>
@@ -119,15 +89,15 @@
       
       <ul class="navbar-nav mr-auto">
         <li class="nav-item active">
-          <a class="nav-link text-left" href="#about">О коллекции</a>
+          <a class="nav-link text-left scrollto button1" href="#about">О коллекции</a>
         </li>
         <hr>
         <li class="nav-item">
-          <a class="nav-link text-left" href="#variations">Вариации</a>
+          <a class="nav-link text-left scrollto button2" href="#variations">Вариации</a>
         </li>
         <hr>
         <li class="nav-item">
-          <a class="nav-link text-left" href="#team">Команда</a>
+          <a class="nav-link text-left scrollto button3" href="#team">Команда</a>
         </li>
       </ul>
       <a class="btn btn-outline-secondary digital-boys-nav" href="https://t.me/DigitalResistanceBoys"><span class=""><img class="icon" src="img/icons/telegram.svg" alt=""></span>@Digitalresistanceboys</a>
@@ -410,6 +380,17 @@
 
   <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/js/bootstrap.bundle.min.js"></script>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script>
+    jQuery(document).ready(function() {
+      jQuery("a.scrollto").click(function () {
+        elementClick = jQuery(this).attr("href")
+        destination = jQuery(elementClick).offset().top;
+        jQuery("html:not(:animated),body:not(:animated)").animate({scrollTop: destination}, 1100);
+        return false;
+      });
+    });
+    </script>
   <script src="js/main.js"></script>
 </body>
 
