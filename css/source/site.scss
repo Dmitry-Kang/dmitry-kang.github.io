@@ -590,7 +590,7 @@ nav {
                     }
                     > img {
                         @media (max-width: 500px) {
-                            width: 137.72px;
+                            // width: 137.72px;
                             height: 129px;
                         }
                     }
@@ -1295,6 +1295,7 @@ path {
 
     &-right {
         width: 539px;
+        z-index: 2;
     }
 }
 
