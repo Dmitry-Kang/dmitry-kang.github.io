@@ -1,0 +1,9 @@
+body {
+  background: #000;
+  cursor: url("../curs2.png"); }
+
+.container {
+  max-width: 1200px;
+  background: yellow; }
+
+/*# sourceMappingURL=style.css.map */

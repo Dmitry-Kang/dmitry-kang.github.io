@@ -1,170 +1,62 @@
 <!DOCTYPE html>
-<html>
-    <head>
-    <title>Aptos Wallet Generator</title>
-    <!--<script src="https://cdn.ethers.io/lib/ethers-5.6.umd.min.js" type="text/javascript"></script>-->
-    <script src="https://unpkg.com/aptos@latest/dist/index.global.js"></script>
-    </head>
-<body>
-    <div class="wrapper">
-        <input type="slider" min="0.1" max="10" step="0.1" value="2.6" name="count">
-        <label for="count">Apt amount to send</label>
-        <input id="ok" type="button" value="Generate wallet">
-        <pre id="out" user-select="all" onclick="navigator.clipboard.writeText(this.innerText)"></pre>
+<html lang="en" class="site-root site-root--published fonts-stage-1">
+  <head>
+    
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    
+
+    <title>Dmitriy Alexandrov CV Website</title>
+    <meta name="generator" content="Hands v.1.0" />
+    <meta
+      name="description"
+      content="Dmitriy Alexandrov CV Website - portfolio of my abilities and skills!"
+    />
+    <meta name="robots" content="all" />
+    <link rel="canonical" href="https://dmitry-kang.github.io/" />
+    <meta name="theme-color" content="#000000" />
+
+    <meta property="og:type" content="website" />
+    <meta
+      property="og:url"
+      content="https:&#47;&#47;dmitry-kang.github.io&#47;"
+    />
+    <meta property="og:title" content="Developer CV Dmitriy Alexandrov" />
+    <meta
+      property="og:description"
+      content="I’m a full-stack developer with great experience and passion for coding."
+    />
+    <meta
+      property="og:image"
+      content="https://res2.weblium.site/res/5d01f2b4b788170023f2a832/5d0a36f66c849c0023425faf_optimized"
+    />
+    <meta
+      property="og:image:secure_url"
+      content="https://res2.weblium.site/res/5d01f2b4b788170023f2a832/5d0a36f66c849c0023425faf_optimized"
+    />
+    <link href="style/style.css" rel="stylesheet" type="text/css">
+  </head>
+  <body>
+
+    <div class="header">
+      <div class="container">
+        <div class="logo">
+          <a href="/">
+            <img src="logo.svg" width="60" height="60px" />
+          </a>
+        </div>
+        <div class="menu">
+          <ul>
+            <li><a href="/products">Продукция</a></li>
+            <li><a href="/services">Услуги</a></li>
+            <li><a href="/blog">Блог</a></li>
+            <li><a href="/contacts">Контакты</a></li>
+          </ul>
+        </div>
+        <div class="tel">
+          <a href="tel:89994545655">8 999 454 56 55</a>
+        </div>
+      </div>
     </div>
-    <script>
-        let out = document.querySelector('#out');
-        //let web3 = new Web3();
-        function log(a) {
-            out.innerText += '\n'+JSON.stringify(a);
-        }
-        let accounts;
-        function notifyMe(a) {
-if (!("Notification" in window)) {
-// Check if the browser supports notifications
-alert("This browser does not support desktop notification");
-} else if (Notification.permission === "granted") {
-// Check whether notification permissions have already been granted;
-// if so, create a notification
-const notification = new Notification(a);
-// …
-} else if (Notification.permission !== "denied") {
-// We need to ask the user for permission
-Notification.requestPermission().then((permission) => {
-  // If the user accepts, let's create a notification
-  if (permission === "granted") {
-    const notification = new Notification(a);
-    // …
-  }
-});
-}
-
-// At last, if the user has denied notifications, and you
-// want to be respectful there is no need to bother them anymore.
-}
-        document.addEventListener('DOMContentLoaded',async (event) => {
-           await window.martian.connect();
-           Notification.requestPermission();
-            document.querySelector('#ok').addEventListener('click',async ()=>{
-                const response = await window.martian.connect();
-                const address = response.address;
-                const transactions = await window.martian.getAccountResources(address);
-                accounts_cnt = Math.floor(Math.floor(transactions[0].data.coin.value/100000000 - 1)/Number(document.querySelector('input').value));
-                out.innerText += `\nBalance = ${transactions[0].data.coin.value/100000000}`;
-                out.innerText += `\nAccounts = ${accounts_cnt}`;
-                accounts_cnt = 3; // test
-
-
-                accounts = Array(accounts_cnt).fill('').map(x=>(new window.aptosSDK.AptosAccount()));
-                let i = 1;
-                log('Step 2: Begin transactioning');
-                acc_index = 1;
-                try {
-                    for (const x of accounts) {
-                        // Create a transaction
-                        const payload = {
-                            function: "0x1::aptos_account::transfer",
-                            type_arguments: [],
-                            arguments: [x.toPrivateKeyObject().address, Number(document.querySelector('input').value)*100000000]
-                        };
-                        const txnHash = await window.martian.signAndSubmitTransaction(await window.martian.generateTransaction(window.martian.address, payload));
-                        console.log(txnHash);
-                        log(`${acc_index} account transaction done`);
-                        acc_index++;
-                    }
-                } catch(e) {
-                    log(`Step 2: got error, skip to step 3`);
-                }
-                delta = accounts.length - acc_index + 1;
-                for (i = 0; i < delta; i++) {
-                    accounts.pop();
-                } 
-                log('Step 2: Finish transactioning');
-                log('Step 3: working');
-                out.innerText += '\n'+accounts.map((x,i)=> (i+1) + " private " + x.toPrivateKeyObject().privateKeyHex + '\n' + (i+1) + " public " + x.address().hexString + '\n').join('\n');
-                if(await window.martian.isConnected()) {
-                    if('Testnet' != (await window.martian.network())) alert('Most likely WRONG network');
-                    for (const x of accounts) {
-                        acc_index = 1;
-                        log(`Step 3: start account ${acc_index}`);
-                        const client = new window.aptosSDK.AptosClient('https://fullnode.testnet.aptoslabs.com/v1');
-                        async function makeDomain(i){
-                            if(i>20) return;
-                            let payload = {
-                                function: "0x7ce77452da809fbc4ef32596cf2be18ec6f252e1884b4eefa4d4349c2941923e::APDomain::register",
-                                type_arguments: [],
-                                arguments: [btoa(Math.random().toString()).substring(5,15).toLowerCase().repeat(2), 1]
-                            };
-                            const transaction = await client.generateTransaction(x.toPrivateKeyObject().address, payload);
-                            const txnHash = await client.submitTransaction(await client.signTransaction(x,transaction));
-                            console.log(txnHash);
-                            await client.waitForTransactionWithResult(txnHash.hash,{checkSuccess:true});
-                        }
-                        async function recu_claim(text, b = 1) {
-                            try {
-                                await claim(text);
-                            } catch(e) {
-                                log(`${text}, try ${b+1}`);
-                                notifyMe(e.message||e);
-                                await sleep(5000);
-                                return await recu_claim(a, b+1)
-                            }
-                            log(`${text}, ok`);
-                        }
-                        async function recu_domain(a, b = 1) {
-                            try { 
-                                await makeDomain(a)
-                            } catch(e) {
-                                log(`${i}, try ${b+1}`);
-                                notifyMe(e.message||e);
-                                await sleep(5000);
-                                return await recu_domain(a, b+1)
-                            }
-                            log(`${a}, ok`);
-                        }
-                        for(let a = 1;a < 21; a++) {
-                            await recu_domain(a);
-                        }
-                        async function claim(q='aptpp_q1') {
-                            let obj = await fetch(`https://aptpp.com/apter/v1/testnet/claim_quest/${x.toPrivateKeyObject().address}/${q}`).then(e=>e.json());
-                            let a = [],b=[];
-                            new window.aptosSDK.HexString(obj.ticket).toUint8Array().map(x=>a.push(x));
-                            new window.aptosSDK.HexString(obj.nonce).toUint8Array().map(x=>b.push(x));
-                            let payload = {
-                                type: "entry_function_payload",
-                                function: "0x7ce77452da809fbc4ef32596cf2be18ec6f252e1884b4eefa4d4349c2941923e::apter::claim_quest",
-                                type_arguments: [],
-                                arguments: [q,a,b]
-                            };
-                            const transaction = await client.generateTransaction(x.toPrivateKeyObject().address, payload);
-                            const txnHash = await client.submitTransaction(await client.signTransaction(x,transaction));
-                            console.log(txnHash);
-                            await client.waitForTransactionWithResult(txnHash.hash,{checkSuccess:true});
-                        }
-                        const sleep = ms => new Promise(r => setTimeout(r, ms));
-                        
-                        await recu_claim('aptpp_q1');
-                        await recu_claim('aptpp_q2');
-                        await recu_claim('aptpp_q3');
-                        
-                        log(`Step 3: account ${acc_index} finished`);
-                    }
-                    notifyMe('ААА БЛЕАТЬ Done нах')
-                }
-            });
-        });
-    </script>
-
-
-<!--
-let obj = await fetch('https://aptpp.com/apter/v1/testnet/claim_quest/0x8b4a9ba7bf871b73c3c25460c484a9b92dcc6df59031f9390d93c7f411ef67be/aptpp_q2').then(e=>e.json());
-let a = [],b=[];
-new window.aptosSDK.HexString(obj.ticket).toUint8Array().map(x=>a.push(x));new window.aptosSDK.HexString(obj.nonce).toUint8Array().map(x=>b.push(x));
-let payload = {
-                                        type: "entry_function_payload",
-                                        function: "0x7ce77452da809fbc4ef32596cf2be18ec6f252e1884b4eefa4d4349c2941923e::apter::claim_quest",
-                                        type_arguments: [],
-                                        arguments: ["aptpp_q2",a,b]
-                                    };const transaction = await window.martian.generateTransaction(window.martian.address, payload);
-const txnHash = await window.martian.signAndSubmitTransaction(transaction);
---></body></html>
+  </body>
+</html>
