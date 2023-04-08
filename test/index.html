@@ -424,7 +424,18 @@
         height: 50px;
         padding-left: 35px;
       }
+      @media (max-width: 992px) and (min-width: 576px) {
+        .shown {
+          display: flex !important;
+        }
+      }
+      @media (min-width: 993px) {
+        .block {
+          display: flex;
+        }
+      }
       @media (max-width: 992px) {
+        
         ._1qORRobW9whJf8ao6Ui_ob {
           display: none;
           position: absolute;
@@ -440,6 +451,12 @@
         }
       }
       @media (max-width: 576px) {
+        .block {
+          display: block !important;
+        }
+      }
+      @media (max-width: 768px) {
+        
         ._1qORRobW9whJf8ao6Ui_ob {
           height: calc(100vh - 45px);
           display: none;
@@ -458,7 +475,7 @@
         padding-right: 25px;
         display: block;
       }
-      @media (max-width: 768px) {
+      @media (max-width: 992px) {
         ._1qORRobW9whJf8ao6Ui_ob ._3__JlO6DgjTBIBnefJf_Wu a {
           color: #000;
         }
@@ -30486,8 +30503,8 @@
                 <a href="#" id="navbar-link-20" class="_3__JlO6DgjTBIBnefJf_Wu"
                   >Рубрикатор</a
                 >
-                <div class="_2Vu-7OzdqaUZgcgMve9SAD _3lmbpTZJwJFOU0uex2sird">
-                  <div class="_3Qk1QcBbaGVOLBY86jgasv">
+                <div id="rubricatormobile" class="_2Vu-7OzdqaUZgcgMve9SAD _3lmbpTZJwJFOU0uex2sird">
+                  <div id="hiderubricatormobile" class="_3Qk1QcBbaGVOLBY86jgasv">
                     Назад
                     <div class="_3a955owFb9z7kvhVJsvqtB">Рубрикатор</div>
                   </div>
@@ -30522,8 +30539,8 @@
                 <a href="#" id="navbar-link-23" class="_3__JlO6DgjTBIBnefJf_Wu"
                   >Клуб</a
                 >
-                <div class="_2Vu-7OzdqaUZgcgMve9SAD _3lmbpTZJwJFOU0uex2sird">
-                  <div class="_3Qk1QcBbaGVOLBY86jgasv">
+                <div id="clubmobile" class="_2Vu-7OzdqaUZgcgMve9SAD _3lmbpTZJwJFOU0uex2sird">
+                  <div id="hideclubmobile" class="_3Qk1QcBbaGVOLBY86jgasv">
                     Назад
                     <div class="_3a955owFb9z7kvhVJsvqtB">Клуб</div>
                   </div>
@@ -31975,21 +31992,36 @@
         var elem = document.getElementById('burger')
         var themesmobile = document.getElementById('themesmobile')
         var themesmobileback = document.getElementById('themesmobileback')
+
+        var rubricatormobile = document.getElementById('rubricatormobile')
+        var hiderubricatormobile = document.getElementById('hiderubricatormobile')
+        var clubmobile = document.getElementById('clubmobile')
+        var hideclubmobile = document.getElementById('hideclubmobile')
+        
         
         getburger.onclick = function() {
             clicked = !clicked
             if (clicked) {
-                elem.style.display = 'block';
+                elem.classList.add('shown');
+                elem.classList.add('block');
                 getburger.style.backgroundImage = "url('embed/nav/d30ef0eae4f1573567d0f8cc19358430.svg')";
             } else {
-                elem.style.display = 'none';
+                elem.classList.remove('shown');
+                elem.classList.remove('block');
                 getburger.style.backgroundImage = "url('embed/nav/2c11ca76b6a098562111b98fafe39af8.svg')";
             }
         }
         themesmobileback.onclick = function() {
             themesmobile.style.visibility = 'hidden';
             setTimeout(()=>{themesmobile.style.removeProperty('visibility');},1000)
-            
+        }
+        hiderubricatormobile.onclick = function() {
+          rubricatormobile.style.visibility = 'hidden';
+          setTimeout(()=>{rubricatormobile.style.removeProperty('visibility');},1000)
+        }
+        hideclubmobile.onclick = function() {
+          clubmobile.style.visibility = 'hidden';
+          setTimeout(()=>{clubmobile.style.removeProperty('visibility');},1000)
         }
         
     </script>
