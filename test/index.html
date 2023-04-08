@@ -30413,7 +30413,7 @@
         <div class="">
           <nav class="MMarKc2JxFYF2V_jXyZ9v">
             <a href="/" class="_2YdbDNRSNunEfOqxkRQlM9"></a>
-            <div class="_1qORRobW9whJf8ao6Ui_ob">
+            <div id="burger" class="_1qORRobW9whJf8ao6Ui_ob">
               <div class="_3__JlO6DgjTBIBnefJf_Wu">
                 <a
                   href="https://snob.ru/made-in-russia/2023/"
@@ -30434,8 +30434,8 @@
                 <a href="#" id="navbar-link-2" class="_3__JlO6DgjTBIBnefJf_Wu"
                   >Темы</a
                 >
-                <div class="_2Vu-7OzdqaUZgcgMve9SAD">
-                  <div class="_3Qk1QcBbaGVOLBY86jgasv">
+                <div id="themesmobile" class="_2Vu-7OzdqaUZgcgMve9SAD">
+                  <div id="themesmobileback" class="_3Qk1QcBbaGVOLBY86jgasv">
                     Назад
                     <div class="_3a955owFb9z7kvhVJsvqtB">Темы</div>
                   </div>
@@ -30565,7 +30565,7 @@
             <div class="Ig5kwg0BY2hmbP_zYG8tn" style="margin-left: auto">
               <a class="_-5XgoQl6v0OMeVg-X0KCU">ВОЙТИ</a>
             </div>
-            <div class="zbeTezrrneY3xwX6v7pOA"></div>
+            <div id="getburger" class="zbeTezrrneY3xwX6v7pOA"></div>
           </nav>
         </div>
       </div>
@@ -31516,7 +31516,7 @@
       </script>
     </div>
 
-    <script src="/embed/nav/index.js?v4"></script>
+    <script src="/embed/nav/index.js"></script>
     <div id="footer">
       <div class="_2Yhaa8JlVNhomlrm4oEl20">
         <div>
@@ -31970,6 +31970,28 @@
         if (localStorage.getItem("cookieNotice")) {
             document.getElementById('cookieNotice').hidden = true;
         }
+        var clicked = false;
+        var getburger = document.getElementById('getburger')
+        var elem = document.getElementById('burger')
+        var themesmobile = document.getElementById('themesmobile')
+        var themesmobileback = document.getElementById('themesmobileback')
+        
+        getburger.onclick = function() {
+            clicked = !clicked
+            if (clicked) {
+                elem.style.display = 'block';
+                getburger.style.backgroundImage = "url('embed/nav/d30ef0eae4f1573567d0f8cc19358430.svg')";
+            } else {
+                elem.style.display = 'none';
+                getburger.style.backgroundImage = "url('embed/nav/2c11ca76b6a098562111b98fafe39af8.svg')";
+            }
+        }
+        themesmobileback.onclick = function() {
+            themesmobile.style.visibility = 'hidden';
+            setTimeout(()=>{themesmobile.style.removeProperty('visibility');},1000)
+            
+        }
+        
     </script>
     <script>
         
