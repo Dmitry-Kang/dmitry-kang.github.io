@@ -188,13 +188,13 @@ body {
     right: 258px;
 }
 
-@media screen and (max-width: 1440px) {
+@media screen and (max-width: 1440px) and (max-aspect-ratio: 9/16) {
     .block__image {
         right: 0px;
     }
 }
 
-@media screen and (max-width: 1000px) {
+@media screen and (max-width: 1000px) and (max-aspect-ratio: 9/16) {
     .container {
         padding: 76px 20px;
     }
