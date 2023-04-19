@@ -187,3 +187,9 @@ body {
     top: -27px;
     right: 258px;
 }
+
+@media screen and (max-width: 1440px) {
+    .block__image {
+        right: 0px;
+    }
+}
