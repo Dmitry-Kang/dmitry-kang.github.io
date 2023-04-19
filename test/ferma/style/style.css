@@ -3,6 +3,10 @@
     box-sizing: border-box;
 }
 
+body {
+    margin-top: 10%;
+}
+
 .container {
     max-width: 1440px;
     margin: 0 auto;
@@ -10,7 +14,6 @@
     background: url(../img/block/bg.jpg);
     background-size: cover;
     background-position: center;
-    z-index: -10;
 }
 
 .block__logo {
@@ -64,11 +67,13 @@
 
 .block__main {
     display: flex;
-    justify-content: space-between;
+    margin-bottom: 170px;
 }
 
 .block__content {
     max-width: 423px;
+    display: inline-block;
+    z-index: 5;
 }
 
 .block__content-download a {
@@ -124,8 +129,10 @@
 }
 
 .block__image {
+    position: absolute;
     width: 647px;
-    height: 650px;
+    right: calc((100% - 1440px)/2);
+
 }
 
 .block__image img {
@@ -133,9 +140,50 @@
 }
 
 .block__image .phone {
-    z-index: -1;
+    z-index: 4;
+    width: 733px;
+    top: -13px;
+    right: 86px;
 }
 
 .block__image .circle-1 {
+    z-index: 1;
+    width: 311px;
+    top: 70px;
+    right: 251px;
+}
 
+.block__image .circle-2 {
+    z-index: 2;
+    width: 393px;
+    top: 135px;
+    right: 221px;
+}
+
+.block__image .circle-3 {
+    z-index: 3;
+    width: 266px;
+    top: 128px;
+    right: 457px;
+}
+
+.block__image .circle-4 {
+    z-index: 3;
+    width: 48px;
+    top: 597px;
+    right: 137px;
+}
+
+.block__image .circle-5 {
+    z-index: 3;
+    width: 41px;
+    top: 349px;
+    right: 737px;
+}
+
+.block__image .circle-6 {
+    z-index: 3;
+    width: 41px;
+    top: -27px;
+    right: 258px;
 }
