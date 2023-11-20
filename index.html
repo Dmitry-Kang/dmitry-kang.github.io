@@ -1,249 +1,31 @@
 <!DOCTYPE html>
-<html lang="en" class="sr">
-  <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="shortcut icon" type="image/png" href="/favicon.2a2e97fc.png">
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <button id="test" onclick="sendMessage()">button</button>
+  <script>
+    let testinput = document.getElementById("test")
 
-    <title>Dmitriy - Web Developer</title>
-    <meta name="keywords" content="Dmitry Kang, skill, portfolio">
-    <meta name="description" content="Dmitry Alexandrov | Web Developer">
+    let socket = new WebSocket("ws://90.188.177.15:9000");
+    socket.onopen = function () {
+      console.log('подключился');
+    };
+    // обработчик сообщений от сервера
+    socket.onmessage = function (message) {
+      console.log('Message: %s', message.data);
+      // this.messages.push(message);
+    };
 
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link rel="stylesheet" href="/index.4a508c1d.css">
-    <script defer="" src="https://unpkg.com/scrollreveal@4.0.0/dist/scrollreveal.min.js"></script>
-
-    <!-- <script async="" defer="" src="https://buttons.github.io/buttons.js"></script> -->
-  </head>
-
-  <body>
-    <div id="top"></div>
-
-    <!-- **** Hero Section **** -->
-    <section id="hero" class="jumbotron">
-      <div class="container">
-        <h1 class="hero-title load-hidden">
-          Привет!<br> Я - <span class="text-color-main">Дмитрий Александров.</span>
-          <br>
-          Я занимаюсь веб разработкой,<br> созданием ботов/автоматизации.
-        </h1>
-        <p class="hero-cta load-hidden">
-          <a rel="noreferrer" class="cta-btn cta-btn--hero" href="#about">Узнать подробнее</a>
-        </p>
-      </div>
-    </section>
-    <!-- /END Hero Section -->
-
-    <!-- **** About Section **** -->
-    <section id="about">
-      <div class="container">
-        <h2 class="section-title load-hidden">Обо мне</h2>
-        <div class="row about-wrapper">
-          <div class="col-md-6 col-sm-12">
-            <div class="about-wrapper__image load-hidden">
-              <img alt="Profile Image" class="img-fluid rounded shadow-lg" height="auto" width="300px" src="/profile.6ee28169.jpg">
-            </div>
-          </div>
-          <div class="col-md-6 col-sm-12">
-            <div class="about-wrapper__info load-hidden">
-              <p class="about-wrapper__info-text">
-                Я окончил ОмГУ им. Достоевского, факультет «Цифровые технологии и кибербезопасность». Защитил диплом на отлично,
-                тема работы "Разработка веб-приложения для доставки товаров".
-              </p>
-              <p class="about-wrapper__info-text">
-                Я амбициозный веб-разработчик с более чем трех летним опытом в разработке сайтов, ищу интересные проекты для получения опыта в работе и развитии компаний.
-                Я имею навыки в различных языках программирования и базах данных, в том числе HTML, CSS, JavaScript, jQuery, PHP, MySql 
-                и т. д. Я понимаю важность использования стандартов и принципов дизайна при проектировании веб-сайтов, что позволяет мне 
-                быстро и эффективно выполнять свои работы. Я очень профессионален и добросовестен в своей работе. Я всегда готов принять 
-                новые задачи и работать над ними с высоким уровнем профессионализма. Я надеюсь, что мои навыки и опыт помогут мне достичь 
-                моей цели: стать лучшим веб-разработчиком и приносить больше пользы компаниям.
-              </p>
-              <span class="d-flex mt-3">
-                <a rel="noreferrer" target="_blank" class="cta-btn cta-btn--resume" href="/assets/resume.pdf">
-                  Посмотреть резюме
-                </a>
-              </span>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-    <!-- /END About Section -->
-
-    <!-- **** Projects Section **** -->
-    <section id="projects">
-      <div class="container">
-        <div class="project-wrapper">
-          <h2 class="section-title dark-blue-text">Проекты</h2>
-
-          <!-- Notice: each .row is a project -->
-          <div class="row">
-            <div class="col-lg-4 col-sm-12">
-              <div class="project-wrapper__text load-hidden">
-                <h3 class="project-wrapper__text-title">Сайт с музыкальным проиграванием</h3>
-                <div>
-                  <p class="mb-4">
-                    Полноценный проект с бекенд и фронтенд частью.
-                    Бекенд сделан на Nest.js + TypeScript.
-                    Фронтенд на React.
-                    <ul>
-                      <li>Сайт предназначен для загрузки и прослушивания треков.</li>
-                      <li>На треки можно ставить лайки, комментировать.</li>
-                      <li>Самими треками можно управлять (ставить на паузу, переключать)</li>
-                    </ul>
-                  </p>
-                </div>
-                <a rel="noreferrer" target="_blank" class="cta-btn cta-btn--hero" href="#!">
-                  Открыть сайт
-                </a>
-                <a rel="noreferrer" target="_blank" class="cta-btn text-color-main" href="https://github.com/Dmitry-Kang/music_platform">
-                  Посмотреть код
-                </a>
-              </div>
-            </div>
-            <div class="col-lg-8 col-sm-12">
-              <div class="project-wrapper__image load-hidden">
-                <a rel="noreferrer" href="#!" target="_blank">
-                  <div data-tilt="" data-tilt-max="4" data-tilt-glare="true" data-tilt-max-glare="0.5" class="thumbnail rounded js-tilt">
-                    <img alt="Project Image" class="img-fluid" src="/project.f500882b.jpg">
-                  </div>
-                </a>
-              </div>
-            </div>
-          </div>
-          <!-- /END Project -->
-
-          <!-- Notice: each .row is a project -->
-          <div class="row">
-            <div class="col-lg-4 col-sm-12">
-              <div class="project-wrapper__text load-hidden">
-                <h3 class="project-wrapper__text-title">Крупный телеграм бот</h3>
-                <div>
-                  <p class="mb-4">
-                    Телеграм бот заточен для командного выполнения задач.
-                    <br><br> 
-                    <ul>
-                      <li>В бота загружаются задачи,проекты которыми нужно заниматься. </li>
-                      <li>Пользователи с особыми правами получают доступ к свободным задачам и могут взять их на себя.</li>
-                      <li>У пользователя с правами админа отображается вся статистика и эффективность каждого пользователя.</li>
-                    </ul>
-                    <ul>
-                      <li>Поддерживается получение событий как через long polling, так и веб хуки. </li>
-                      <li>Поддерживает асинхронность, проверка сайтов на валидность и регулярная проверка на ценность проектов (автоматическая).</li>
-                      <li>Бот обработан и защищен от всевозможных ошибок и попыток навредить боту или задачам.</li>
-                      <li>Присутствует отображение статистики пользователей в самообновляющихся гугл таблицах.</li>
-                      <li>Архитектура проекта позволяет через один проект запустить несколько телеграм ботов, подключать разные модули и создавать новые не ломая предыдущие модули.</li>
-                    </ul>
-                  </p>
-                </div>
-                <!-- <a rel="noreferrer" target="_blank" class="cta-btn cta-btn--hero" href="https://t.me/collab_management_telegram_bot">
-                  Зайти в бота в телеграмме
-                </a> -->
-                <a rel="noreferrer" target="_blank" class="cta-btn text-color-main" href="https://github.com/Dmitry-Kang/telegram_collab_bot">
-                  Посмотреть код
-                </a>
-              </div>
-            </div>
-            <div class="col-lg-8 col-sm-12">
-              <div class="project-wrapper__image load-hidden">
-                <a rel="noreferrer" href="#!" target="_blank">
-                  <div data-tilt="" data-tilt-max="4" data-tilt-glare="true" data-tilt-max-glare="0.5" class="thumbnail rounded js-tilt">
-                    <img alt="Project Image" class="img-fluid" src="img/projects/telegram.jpg">
-                  </div>
-                </a>
-              </div>
-            </div>
-          </div>
-          <!-- /END Project -->
-
-          <!-- Notice: each .row is a project -->
-          <div class="row">
-            <div class="col-lg-4 col-sm-12">
-              <div class="project-wrapper__text load-hidden">
-                <h3 class="project-wrapper__text-title">Вк бот для скачивания музыки</h3>
-                <div>
-                  <p class="mb-4">
-                    Вк и ютуб публикуется куча уникальных треков, которых просто нету например в spotify или яндекс музыке.
-                    Библиотеки для прямой загрузки с ютуба в формате mp3 имеются, в отличии от прямой загрузки из вк.
-                    Я сделал свою библиотеку которая занимается всем процессом по выкачиванию треков из вк.
-                    <ul>
-                      <li>Бот который поддерживает загрузку одиночных треков, группу из треков, плей листы.</li>
-                      <li>Сохраняет их на компьютер где запущен проект либо в телеграм через телеграм бота</li>
-                    </ul>
-                  </p>
-                </div>
-                <!-- <a rel="noreferrer" target="_blank" class="cta-btn cta-btn--hero" href="#!">
-                  See Live
-                </a> -->
-                <a rel="noreferrer" target="_blank" class="cta-btn text-color-main" href="#!">
-                  Посмотреть код
-                </a>
-              </div>
-            </div>
-            <div class="col-lg-8 col-sm-12">
-              <div class="project-wrapper__image load-hidden">
-                <a rel="noreferrer" href="#!" target="_blank">
-                  <div data-tilt="" data-tilt-max="4" data-tilt-glare="true" data-tilt-max-glare="0.5" class="thumbnail rounded js-tilt">
-                    <img alt="Project Image" class="img-fluid" src="/img/projects/vk.jpg">
-                  </div>
-                </a>
-              </div>
-            </div>
-          </div>
-          <!-- /END Project -->
-        </div>
-      </div>
-    </section>
-    <!-- /END Projects Section -->
-
-    <!-- **** Contact Section **** -->
-    <section id="contact">
-      <div class="container">
-        <h2 class="section-title">Контакты</h2>
-        <div class="social-links">
-          <a rel="noreferrer" href="mailto:alexandrov.dp@mail.ru" target="_blank">
-            <i class="fa fa-envelope fa-inverse"></i>
-          </a>
-          <a rel="noreferrer" href="tel:+78887772211" target="_blank">
-            <i class="fa fa-phone fa-inverse"></i>
-          </a>
-          <a rel="noreferrer" href="https://vk.com/dimakang" target="_blank">
-            <i class="fa fa-vk fa-inverse"></i>
-          </a>
-          <a rel="noreferrer" href="https://t.me/ditritus_h" target="_blank">
-            <i class="fa fa-telegram fa-inverse"></i>
-          </a>
-          <a rel="noreferrer" href="https://wa.me/78887772211" target="_blank">
-            <i class="fa fa-whatsapp fa-inverse"></i>
-          </a>
-          <!-- <a rel="noreferrer" href="#!" target="_blank">
-            <i class="fa fa-linkedin fa-inverse"></i>
-          </a> -->
-        </div>
-      </div>
-    </section>
-    <!-- /END Contact Section -->
-
-    <!-- **** Footer Section **** -->
-    <footer class="footer navbar-static-bottom">
-      <div class="container">
-        <a rel="noreferrer" href="#top" class="back-to-top">
-          <i class="fa fa-angle-up fa-2x" aria-hidden="true"></i>
-        </a>
-        <div class="social-links">
-          <a rel="noreferrer" href="https://github.com/Dmitry-Kang" target="_blank">
-            <i class="fa fa-github fa-inverse"></i>
-          </a>
-        </div>
-
-        <hr>
-
-        <p class="footer__text">
-          © 2022 - Developed by
-          <a rel="noreferrer" href="https://github.com/Dmitry-Kang" target="_blank">Dmitriy Alexandrov</a>
-        </p>
-
-    <script defer="" src="/index.975ef6c8.js"></script>
-  </div></footer></body>
+    function sendMessage() {
+      // Отправка сообщения на сервер
+      socket.send("asd");
+      // this.socket.emit('message', this.message);
+      // this.message = '';
+    }
+  </script>
+</body>
 </html>
