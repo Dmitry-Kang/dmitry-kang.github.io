@@ -10,23 +10,28 @@
 <body>
   <button id="test" onclick="sendMessage()">button</button>
   <script>
-    let testinput = document.getElementById("test")
-
-    let socket = new WebSocket("ws://90.188.177.15:9000");
-    socket.onopen = function () {
-      console.log('подключился');
-    };
-    // обработчик сообщений от сервера
-    socket.onmessage = function (message) {
-      console.log('Message: %s', message.data);
-      // this.messages.push(message);
-    };
 
     function sendMessage() {
-      // Отправка сообщения на сервер
-      socket.send("asd");
-      // this.socket.emit('message', this.message);
-      // this.message = '';
+      fetch('http://90.188.177.15:7778/testTwitter', {
+        method: 'PUT',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: { post: 'My name is Elon Musk' }
+      })
+      .then(response => {
+        if (!response.ok) {
+          throw new Error(`HTTP error! Status: ${response.status}`);
+        }
+        return response.json();
+      })
+      .then(data => {
+        console.log('Server response:', data);
+      })
+      .catch(error => {
+        console.error('Error:', error);
+      });
+
     }
   </script>
 </body>
