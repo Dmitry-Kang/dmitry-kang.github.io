@@ -1,0 +1,1 @@
+import{u as o,a as n,d as u,o as r,e as l,f as e,t as s,g as a}from"./index.1cab0b9d.js";const c={class:"q-pa-md"},m={__name:"GetConsultation",setup(p){o(),n();const{t}=u();return(_,i)=>(r(),l("div",c,[e("p",null,s(a(t)("stepN_getConsultation")),1),e("p",null,s(a(t)("stepN_getConsultation2")),1)]))}};export{m as default};
